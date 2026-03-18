@@ -133,10 +133,11 @@ function showToast(){{const t=document.getElementById('toast');t.classList.add('
 
 CAT_ICONS = ['🖥️','📱','💰','🧠','🛒','⚙️','🚀','🎯','🤖','📊']
 CATS = ['cat-1','cat-2','cat-3','cat-4','cat-5','cat-6','cat-7','cat-8','cat-1','cat-5']
-WEEKDAYS = ['MON','TUE','WED','THU','FRI','SAT','SUN']
+WEEKDAYS = ['周一','周二','周三','周四','周五','周六','周日']
 
 def generate_html(date_str, news_list):
-    today = datetime.now()
+    import zoneinfo
+    today = datetime.now(zoneinfo.ZoneInfo('Asia/Shanghai'))
     weekday = WEEKDAYS[today.weekday()]
     cards_html = ''
     sources = set()
